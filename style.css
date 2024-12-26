@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 2px solid #333;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #333;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.card p {
+    color: #b0b0b0;
+    margin-bottom: 1rem;
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 200px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a1a;
+    padding: 2rem;
+    max-width: 800px;
+    width: 90%;
+    border-radius: 10px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #333;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container {
+    width: 100%;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    max-height: 500px;
+    /* Maximum height limit */
+    object-fit: contain;
+    /* Maintains aspect ratio */
+}
+
+/* Aspect ratio container for proper sizing */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    /* Default 16:9 aspect ratio */
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Modal image styles */
+.modal-image-container {
+    width: 100%;
+    max-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.modal-image-container img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-wrapper {
+        padding-bottom: 75%;
+        /* 4:3 aspect ratio for mobile */
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.pagination button {
+    padding: 0.5rem 1rem;
+    background: #333;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.page-info {
+    color: #fff;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --background-dark: #0a0a0a;
+    --card-bg: #1a1a1a;
+    --text-light: #e0e0e0;
+    --border-color: #333;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improved header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background-color: rgba(26, 26, 26, 0.95);
+}
+
+header a {
+    text-decoration: none;
+
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+header a:hover {
+    color: white;
+}
+
+/* Enhanced card styles */
+.card {
+    position: relative;
+    backdrop-filter: blur(10px);
+    background-color: rgba(26, 26, 26, 0.8);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+}
+
+/* Loading skeleton */
+.skeleton {
+    background: linear-gradient(90deg, #1a1a1a 25%, #333 50%, #1a1a1a 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Enhanced pagination */
+.pagination {
+    padding: 1rem;
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.pagination button {
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.pagination button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Modal enhancements */
+.modal-content {
+    animation: modalFade 0.3s ease;
+}
+
+@keyframes modalFade {
+    from { opacity: 0; transform: translate(-50%, -48%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Loading indicator */
+#loadingIndicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+/* Responsive image loading */
+.image-wrapper img {
+    transition: opacity 0.3s ease;
+}
+
+.image-wrapper img.loaded {
+    opacity: 1;
+}
